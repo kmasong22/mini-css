@@ -1,2 +1,2 @@
-# post8
-Very Simple PHP Blogging with social networking function
+# mini CSS Clone
+Custom mini.css library based on [Mini.CSS](https://minicss.org/)
