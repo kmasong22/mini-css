@@ -813,7 +813,7 @@ label {
   flex-basis: 0px;
 }
 
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button, [type="date"]::-webkit-inner-spin-button, [type="date"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -827,7 +827,7 @@ label {
   -webkit-appearance: none;
 }
 
-input:not([type]), [type="text"], [type="email"], [type="number"], [type="search"],
+input:not([type]), [type="text"], [type="email"], [type="date"], [type="number"], [type="search"],
 [type="password"], [type="url"], [type="tel"], [type="checkbox"], [type="radio"], textarea, select {
   box-sizing: border-box;
   background: var(--input-back-color);
@@ -987,40 +987,57 @@ input:disabled, input[disabled], textarea:disabled, textarea[disabled], select:d
 /*
   Custom elements for forms and input elements.
 */
+
+:root {
+  --primary-bcolor: #1976d2;
+  --primary-fcolor: #f8f8f8;
+  --primary-hcolor: #1565c0;
+  --secondary-bcolor: #d32f2f;
+  --secondary-fcolor: #f8f8f8;
+  --secondary-hcolor: #c62828;
+  --tertiary-bcolor: #308732;
+  --tertiary-fcolor: #f8f8f8;
+  --tertiary-hcolor: #277529;
+  --inverse-bcolor: #212121;
+  --inverse-fcolor: #f8f8f8;
+  --inverse-hcolor: #111;
+}
+
+
 button.primary, [type="button"].primary, [type="submit"].primary, [type="reset"].primary, .button.primary, [role="button"].primary {
-  --button-back-color: #1976d2;
-  --button-fore-color: #f8f8f8;
+  --button-back-color: var(--primary-bcolor);
+  --button-fore-color: var(--primary-fcolor);
 }
 
 button.primary:hover, button.primary:focus, [type="button"].primary:hover, [type="button"].primary:focus, [type="submit"].primary:hover, [type="submit"].primary:focus, [type="reset"].primary:hover, [type="reset"].primary:focus, .button.primary:hover, .button.primary:focus, [role="button"].primary:hover, [role="button"].primary:focus {
-  --button-hover-back-color: #1565c0;
+  --button-hover-back-color: var(--primary-hcolor);
 }
 
 button.secondary, [type="button"].secondary, [type="submit"].secondary, [type="reset"].secondary, .button.secondary, [role="button"].secondary {
-  --button-back-color: #d32f2f;
-  --button-fore-color: #f8f8f8;
+  --button-back-color: var(--secondary-bcolor);
+  --button-fore-color: var(--secondary-fcolor);
 }
 
 button.secondary:hover, button.secondary:focus, [type="button"].secondary:hover, [type="button"].secondary:focus, [type="submit"].secondary:hover, [type="submit"].secondary:focus, [type="reset"].secondary:hover, [type="reset"].secondary:focus, .button.secondary:hover, .button.secondary:focus, [role="button"].secondary:hover, [role="button"].secondary:focus {
-  --button-hover-back-color: #c62828;
+  --button-hover-back-color: var(--secondary-hcolor);
 }
 
 button.tertiary, [type="button"].tertiary, [type="submit"].tertiary, [type="reset"].tertiary, .button.tertiary, [role="button"].tertiary {
-  --button-back-color: #308732;
-  --button-fore-color: #f8f8f8;
+  --button-back-color: var(--tertiary-bcolor);
+  --button-fore-color: var(--tertiary-fcolor);
 }
 
 button.tertiary:hover, button.tertiary:focus, [type="button"].tertiary:hover, [type="button"].tertiary:focus, [type="submit"].tertiary:hover, [type="submit"].tertiary:focus, [type="reset"].tertiary:hover, [type="reset"].tertiary:focus, .button.tertiary:hover, .button.tertiary:focus, [role="button"].tertiary:hover, [role="button"].tertiary:focus {
-  --button-hover-back-color: #277529;
+  --button-hover-back-color: var(--tertiary-hcolor);
 }
 
 button.inverse, [type="button"].inverse, [type="submit"].inverse, [type="reset"].inverse, .button.inverse, [role="button"].inverse {
-  --button-back-color: #212121;
-  --button-fore-color: #f8f8f8;
+  --button-back-color: var(--inverse-bcolor);
+  --button-fore-color: var(--inverse-fcolor);
 }
 
 button.inverse:hover, button.inverse:focus, [type="button"].inverse:hover, [type="button"].inverse:focus, [type="submit"].inverse:hover, [type="submit"].inverse:focus, [type="reset"].inverse:hover, [type="reset"].inverse:focus, .button.inverse:hover, .button.inverse:focus, [role="button"].inverse:hover, [role="button"].inverse:focus {
-  --button-hover-back-color: #111;
+  --button-hover-back-color: var(--inverse-hcolor);
 }
 
 button.small, [type="button"].small, [type="submit"].small, [type="reset"].small, .button.small, [role="button"].small {
